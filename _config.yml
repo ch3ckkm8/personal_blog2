@@ -14,8 +14,11 @@ kramdown:
   toc_levels: 1..6   # include all heading levels from # to ######
 extra_css:
   - assets/css/custom.css
-extra_js:
-  - assets/js/back-to-top.js
-  - assets/js/dark-mode-toggle.js
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
+# Site-wide footer snippet (allowed to contain HTML)
+footer_content: '<a href="#top" aria-label="Back to top" style="position:fixed;right:16px;bottom:16px;padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#f8f8f8;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.12);">↑ Top</a>'
+
+  
 
 
