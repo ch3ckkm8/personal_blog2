@@ -1,0 +1,9 @@
+{% assign headers = include.html | number_of_headers: site.kramdown.toc_levels %}
+{% if headers != 0 %}
+  <ul>
+    {% for entry in include.html | tocify: site.kramdown.toc_levels %}
+      <li><a href="#{{ entry.id }}">{{ entry.text }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
