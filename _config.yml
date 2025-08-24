@@ -6,9 +6,9 @@ relative_links:
   collections: true
 docs_dir: docs
 baseurl: "/personal_blog2"
-back_to_top: true
-back_to_top_text: "Back to top"
-show_toc: true 
-sass:
-  style: compressed
+show_toc: true
 
+markdown: kramdown
+kramdown:
+  input: GFM
+  toc_levels: 1..6   # include all heading levels from # to ######
