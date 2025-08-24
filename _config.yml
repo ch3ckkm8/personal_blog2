@@ -12,3 +12,6 @@ markdown: kramdown
 kramdown:
   input: GFM
   toc_levels: 1..6   # include all heading levels from # to ######
+extra_css:
+  - assets/css/custom.css
+
