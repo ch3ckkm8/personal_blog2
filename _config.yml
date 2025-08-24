@@ -4,6 +4,4 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-include:
-  - README.md
-  - ch3ckm8_HTB_Active.md
+docs_dir: docs
