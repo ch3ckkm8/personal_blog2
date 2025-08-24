@@ -22,14 +22,14 @@ layout: table_wrappers
       {% include components/breadcrumbs.html %}
       <div id="main-content" class="main-content">
         <main>
-          {{ content }}
-        
           {% if page.has_toc != false %}
-            <nav id="nav-sidebar" class="bs-docs-sidebar">
+            <details id="page-toc" class="page-toc" open>
+              <summary>Table of Contents</summary>
               {% include components/children_nav.html %}
-            </nav>
+            </details>
           {% endif %}
-
+        
+          {{ content }}
         </main>
 
 
