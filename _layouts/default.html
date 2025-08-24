@@ -27,15 +27,14 @@ layout: table_wrappers
               {% include toc.html html=content %}
             </nav>
           {% endif %}
-
-
-            {{ content }}
-          {% endif %}
-
+        
+          {{ content }}
+        
           {% if page.has_toc != false %}
             {% include components/children_nav.html %}
           {% endif %}
         </main>
+
         {% include components/footer.html %}
       </div>
     </div>
