@@ -5,3 +5,4 @@ relative_links:
   enabled: true
   collections: true
 docs_dir: docs
+baseurl: "/personal_blog2"
