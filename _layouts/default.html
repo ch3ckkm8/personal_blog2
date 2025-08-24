@@ -25,12 +25,13 @@ layout: table_wrappers
           {% if page.has_toc != false %}
             <details id="page-toc" class="page-toc" open>
               <summary>Table of Contents</summary>
-              {% include components/children_nav.html %}
+              {% include toc.html html=content %}
             </details>
           {% endif %}
         
           {{ content }}
         </main>
+
 
 
         {% include components/footer.html %}
