@@ -8,4 +8,4 @@ docs_dir: docs
 baseurl: "/personal_blog2"
 back_to_top: true
 back_to_top_text: "Back to top"
-
+show_toc: true 
