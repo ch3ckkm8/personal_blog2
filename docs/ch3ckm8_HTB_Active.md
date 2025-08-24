@@ -1,6 +1,7 @@
 ---
 title: "ch3ckm8 HTB Active"
 has_toc: true
+layout: default
 ---
 
 
