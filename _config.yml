@@ -14,6 +14,5 @@ kramdown:
   toc_levels: 1..6   # include all heading levels from # to ######
 extra_css:
   - assets/css/custom.css
-heading_anchors: false
 
 
