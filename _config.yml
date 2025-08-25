@@ -5,7 +5,10 @@ relative_links:
   enabled: true
   collections: true
 docs_dir: docs
+url: "https://ch3ckkm8.github.io"
 baseurl: "/personal_blog2/docs"
+nav_collapsible: true
+nav_collapsible_by_default: false
 show_toc: true
 
 markdown: kramdown
