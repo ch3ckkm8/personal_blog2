@@ -1,2 +1,11 @@
 <!-- Custom head include -->
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("p").forEach(p => {
+    p.innerHTML = p.innerHTML.replace(/==(.+?)==/g, "<mark>$1</mark>");
+  });
+});
+</script>
+
