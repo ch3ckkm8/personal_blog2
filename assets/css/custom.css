@@ -42,19 +42,20 @@
   color: #f1f1f1;
 }
 
-/* Style PHP code blocks globally */
+/* General block styling */
 .language-php {
-  background-color: #2d2d2d; /* match dark scheme */
-  color: #f8f8f2;
-  display: block;
-  padding: 0.5em;
+  background-color: #2d2d2d !important;
+  color: #f8f8f2 !important;
   border-radius: 6px;
+  padding: 0.5em;
   overflow-x: auto;
+  display: block;
 }
 
-/* optional syntax tweaks */
+/* Rouge token classes */
 .language-php .k { color: #66d9ef; font-weight: bold; }  /* keywords */
 .language-php .s { color: #e6db74; }                     /* strings */
 .language-php .c { color: #75715e; font-style: italic; } /* comments */
+
 
 
