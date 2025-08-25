@@ -27,3 +27,8 @@
 | Fluffy        | Windows | Easy       | ✅ password protected                                    | 🛠️ in progress    |
 
 
+# Other CTF Writeups
+
+| Machine       | OS      | Difficulty | Progress / Tags                                         | Writeup          |
+|---------------|---------|------------|---------------------------------------------------------|------------------|
+| [Portfolio](ch3ckm8_RoboGRoot-CTF_Portfolio.html)        | Linux | -       | ✅ WebApp XSS RCE Docker   | ✅                |
