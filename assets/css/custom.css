@@ -42,13 +42,19 @@
   color: #f1f1f1;
 }
 
-// Custom syntax highlighting for PHP
+/* Style PHP code blocks globally */
 .language-php {
-  color: #f8f8f2; // base text
-  background: #2d2d2d; // same bg as other code
+  background-color: #2d2d2d; /* match dark scheme */
+  color: #f8f8f2;
+  display: block;
+  padding: 0.5em;
+  border-radius: 6px;
+  overflow-x: auto;
 }
 
-.language-php .k { color: #66d9ef; } // keywords
-.language-php .s { color: #e6db74; } // strings
-.language-php .c { color: #75715e; } // comments
+/* optional syntax tweaks */
+.language-php .k { color: #66d9ef; font-weight: bold; }  /* keywords */
+.language-php .s { color: #e6db74; }                     /* strings */
+.language-php .c { color: #75715e; font-style: italic; } /* comments */
+
 
