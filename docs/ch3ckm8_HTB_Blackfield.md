@@ -9,7 +9,7 @@ has_toc: true
 
 # Intro
 
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809133212.png)
+![](MediaFiles/Pasted%20image%2020250809133212.png)
 Tags: #windows #NotAssumedBreach #OSCPpath #PrivGroupAbuse 
 Tools used:
 - rpcclient (RPC enum)
@@ -451,27 +451,27 @@ bloodhound-python -u 'support' -p '#00^BlackKnight' -d BLACKFIELD.local -ns 10.1
 start bloodhound and inspect the user we currently have access first (support)
 
 `Group Membership` of user `support`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132333.png)
+![](MediaFiles/Pasted%20image%2020250809132333.png)
 hm apart from being obviously member of the domain users group, no other group memberships observed
 
 `Outbound Object Control` of user `support`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132344.png)
+![](MediaFiles/Pasted%20image%2020250809132344.png)
 interesting, our owned user has `ForceChangePassword` rights towards `AUDIT2020` user.
 
 We could now inspect this user to identify the full path that we will follow
 
 `Group Membership` of user `AUDIT2020`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132351.png)
+![](MediaFiles/Pasted%20image%2020250809132351.png)
 hm apart from being obviously member of the domain users group, no other group memberships observed
 
 Since i found nothing further interesting about `AUDIT2020` user, i will proceed to run some queries from bloodhound
 
 `Shortest Paths to Unconstrained Delegation Systems`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132357.png)
+![](MediaFiles/Pasted%20image%2020250809132357.png)
 hm this means that user `SVC_BACKUP` can remotely login to the DC, lets now inspect `SVC_BACKUP`
 
 `Group Membership` of user `SVC_BACKUP`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132403.png)
+![](MediaFiles/Pasted%20image%2020250809132403.png)
 nothing else found about this user, this user could be our next target, BUT lets stop for a minute and think.
 
 Okay the path might not be obvious right now, but lets proceed on doing what we already know, so lets proceed on changing the password for user `AUDIT2020` as user `support`.
@@ -769,7 +769,7 @@ evil-winrm -i blackfield.htb -u svc_backup -H 9658d1d1dcd9250115e2205d9f48400d
 logged in, and grabbed user flag! `3920bb317a0bef51027e2852be64b543`
 
 proof
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132437.png)
+![](MediaFiles/Pasted%20image%2020250809132437.png)
 
 ---
 
@@ -778,11 +778,11 @@ proof
 Lets remember what bloodhound showed us earlier about user `SVC_BACKUP`:
 
 `Shortest Paths to Unconstrained Delegation Systems`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132452.png)
+![](MediaFiles/Pasted%20image%2020250809132452.png)
 hm this means that user `SVC_BACKUP` can remotely login, lets now inspect `SVC_BACKUP'` group membership:
 
 `Group Membership` of user `SVC_BACKUP`
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132504.png)
+![](MediaFiles/Pasted%20image%2020250809132504.png)
 hm so how do we privesc here? well the simplest thought here to start with, would be that this user is member of `BACKUP OPERATORS` , what do we know about this group?
 
 Members of the **Backup Operators** group can:
@@ -986,7 +986,7 @@ evil-winrm -i blackfield.htb -u Administrator -H 184fb5e5178480be64824d4cd53b99e
 grabbed root flag! `4375a629c7c67c8e29db269060c955cb`
 
 proof
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809132535.png)
+![](MediaFiles/Pasted%20image%2020250809132535.png)
 
 ---
 # Summary
@@ -1027,4 +1027,4 @@ Here is the list of the steps simplified, per phase, for future reference and fo
 
 To conclude, this was a good all around machine. What i learned from this one, for the foothold was that enumeration can have multiple layers, as more users get compromised. As for the privesc part, it was essential to learn about the privileged group's permissions that the compromised user was a member of  and how to exploit them. 
 
-![](HTB_machines/MediaFiles/Pasted%20image%2020250809133104.png)
+![](MediaFiles/Pasted%20image%2020250809133104.png)
