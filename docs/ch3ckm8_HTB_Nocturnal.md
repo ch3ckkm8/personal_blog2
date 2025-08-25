@@ -254,8 +254,8 @@ so, upon reading the files above, i noticed the following about the files and fo
 - logout.php -> just logs out the user, nothing further valuable
 - style.css -> the style of the page, no comments or anything else observed
 - index.php -> the homepage, nothing further interesting
+- register.php
 
-- register.php 
 ```shell
 <?php
 session_start();
@@ -305,6 +305,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ```
 
 - login.php
+
 ```shell
 <?php
 session_start();
@@ -356,6 +357,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 - dashboard.php 
 ![Pasted image 20250529004248](MediaFiles/Pasted%20image%2020250529004248.png)
+
 ```shell
 <?php
 session_start();
@@ -437,6 +439,7 @@ $files = $stmt->execute();
 ```
 
 - view.php -> when you download the file
+
 ```shell
 <?php ob_start(); ?>
 <!DOCTYPE html>
@@ -531,6 +534,7 @@ $files = $stmt->execute();
 - admin.php
 This page will be our target, as wee see a text box there, indicating that we can specify password to encrypt our backup, lets inspect its code too, to see if we can find how it works under the hood:
 ![Pasted image 20250527175300](MediaFiles/Pasted%20image%2020250527175300.png)
+
 ```shell
 <?php
 session_start();
@@ -669,6 +673,7 @@ if (isset($_POST['backup']) && !empty($_POST['password'])) {
 </html>
 ```
 Whats interesting here, is the part where our input is parsed:
+
 ```shell
 $command = "zip -x './backups/*' -r -P " . $password . " " . $backupFile . " .  > " . $logFile . " 2>&1 &";
 ```
@@ -676,6 +681,7 @@ $command = "zip -x './backups/*' -r -P " . $password . " " . $backupFile . " .  
 - it concatenates user input (`$password`) into a shell command without proper escaping or sanitization.
 - Their is an attempt to filter certain characters (`;`, `&`, `|`, etc.) in `cleanEntry()`, but this blacklist approach is **incomplete** and **can be bypassed** using URL encoding, null bytes, tabs, newlines, or command substitution.
 ###### Why also `cleanEntry()` is not enough:
+
 ```shell
 function cleanEntry($entry) {
     $blacklist_chars = [';', '&', '|', '$', ' ', '', '{', '}', '&&'];
