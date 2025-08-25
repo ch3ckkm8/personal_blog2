@@ -17,6 +17,8 @@ kramdown:
   input: GFM
   toc_levels: 1..6   # include all heading levels from # to ######
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: text
 extra_css:
   - assets/css/custom.css
 # Color scheme supports "light" (default) and "dark"
