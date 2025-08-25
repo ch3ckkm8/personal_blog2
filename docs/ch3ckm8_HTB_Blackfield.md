@@ -10,6 +10,7 @@ has_toc: true
 # Intro
 
 ![](MediaFiles/Pasted%20image%2020250809133212.png)
+
 Tags: #windows #NotAssumedBreach #OSCPpath #PrivGroupAbuse 
 Tools used:
 - rpcclient (RPC enum)
