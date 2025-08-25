@@ -9,6 +9,7 @@ has_toc: true
 # Intro
 
 ![](MediaFiles/Pasted%20image%2020250805150432.png)
+
 Tags: #windows #NotAssumedBreach #OSCPpath #DCSync #WinPEAS
 Tools used:
 - BurpSuite (inspecting the web app)

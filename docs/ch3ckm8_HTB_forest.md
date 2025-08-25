@@ -9,6 +9,7 @@ has_toc: true
 # Intro
 
 ![](MediaFiles/Pasted%20image%2020250727182355.png)
+
 Tags: #windows  #NotAssumedBreach  #AS-REP-roasting #OSCPpath  
 Tools used:
 enum4linux (smb & rpc enum)

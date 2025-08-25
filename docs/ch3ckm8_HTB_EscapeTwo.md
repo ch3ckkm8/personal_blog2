@@ -11,6 +11,7 @@ has_toc: true
 This is a WINDOWS machine of easy difficulty, named EscapeTwo, lets begin
 
 ![](MediaFiles/Pasted%20image%2020250407013454.png)
+
 Machine Information:
 ```
 As is common in real life Windows pentests, you will start this box with credentials for the following account: rose / KxEPkKe6R8su, so its an assumed breach scenario

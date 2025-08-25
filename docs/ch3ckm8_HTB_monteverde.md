@@ -9,6 +9,7 @@ has_toc: true
 # Intro
 
 ![](MediaFiles/Pasted%20image%2020250624124752.png)
+
 Tags: #windows #AD #OSCPpath #NotAssumedBreach #ADconnectAbuse
 Tools used:
 - windapsearch (LDAP enum)
