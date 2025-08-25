@@ -41,3 +41,14 @@
   background-color: #1c1c1c;
   color: #f1f1f1;
 }
+
+// Custom syntax highlighting for PHP
+.language-php {
+  color: #f8f8f2; // base text
+  background: #2d2d2d; // same bg as other code
+}
+
+.language-php .k { color: #66d9ef; } // keywords
+.language-php .s { color: #e6db74; } // strings
+.language-php .c { color: #75715e; } // comments
+
