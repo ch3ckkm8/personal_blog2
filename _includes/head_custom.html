@@ -1,11 +1,18 @@
 <!-- Custom head include -->
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
+<!-- Custom head include: PHP highlighting + ==text== highlighter -->
+
+<!-- JS to convert ==text== to <mark>text</mark> -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+  // Select all paragraph elements
   document.querySelectorAll("p").forEach(p => {
-    p.innerHTML = p.innerHTML.replace(/==(.+?)==/g, "<mark>$1</mark>");
+    // Replace all occurrences of ==text== with <mark>text</mark>
+    // Uses regex with g (global) and s (dot matches newlines)
+    p.innerHTML = p.innerHTML.replace(/==([\s\S]+?)==/g, "<mark>$1</mark>");
   });
 });
 </script>
+
 
