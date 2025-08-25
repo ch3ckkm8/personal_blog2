@@ -19,8 +19,10 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     default_lang: text
-extra_css:
-  - assets/css/custom.css
+just_the_docs:
+  custom_css:
+    - assets/css/custom.css
+
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
 # Site-wide footer snippet (allowed to contain HTML)
