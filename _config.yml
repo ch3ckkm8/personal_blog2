@@ -31,7 +31,7 @@ just_the_docs:
 color_scheme: dark
 # Site-wide footer snippet (allowed to contain HTML)
 footer_content: |
-  <!-- Back to Top -->
+  <!-- Back to Top Button -->
   <a href="#top" aria-label="Back to top"
      style="position:fixed;right:16px;bottom:16px;padding:8px 10px;
             border-radius:8px;border:1px solid #ddd;
@@ -39,3 +39,44 @@ footer_content: |
             box-shadow:0 1px 4px rgba(0,0,0,.12);">
      ↑ Top
   </a>
+
+  <!-- Dark/Light Toggle Button (bottom-left) -->
+  <button id="dark-mode-toggle"
+          style="position:fixed;left:16px;bottom:16px;
+                 background:#444;color:#fff;border:none;
+                 padding:10px 14px;border-radius:6px;
+                 cursor:pointer;z-index:2147483647;">
+  </button>
+
+  <!-- Inline JS for Dark/Light Toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.getElementById("dark-mode-toggle");
+      if (!btn) return;
+
+      // Initialize theme from localStorage or default to dark
+      let currentTheme = localStorage.getItem("theme") || 'dark';
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
+      // Update button text
+      function updateBtn() {
+        btn.innerText = document.documentElement.getAttribute("data-theme") === 'dark'
+          ? '☀️ Light'
+          : '🌙 Dark';
+      }
+      updateBtn();
+
+      // Toggle theme on click
+      btn.addEventListener("click", function () {
+        if (document.documentElement.getAttribute("data-theme") === 'dark') {
+          document.documentElement.setAttribute("data-theme", 'light');
+          localStorage.setItem("theme", 'light');
+        } else {
+          document.documentElement.setAttribute("data-theme", 'dark');
+          localStorage.setItem("theme", 'dark');
+        }
+        updateBtn();
+      });
+    });
+  </script>
+
