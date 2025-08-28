@@ -1,5 +1,7 @@
 title: "ch3ckm8's vault"
 remote_theme: just-the-docs/just-the-docs
+just_the_docs:
+  theme_toggle: true
 
 
 plugins:
@@ -25,8 +27,6 @@ kramdown:
 just_the_docs:
   custom_css:
     - assets/css/custom.css
-  custom_js:
-    - assets/js/dark-mode-toggle.js
 
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
@@ -40,57 +40,3 @@ footer_content: |
             box-shadow:0 1px 4px rgba(0,0,0,.12);">
      ↑ Top
   </a>
-
-  <!-- Dark/Light Toggle Button -->
-  <button id="dark-mode-toggle"
-          style="position:fixed;left:16px;bottom:16px;
-                 background:#444;color:#fff;border:none;
-                 padding:10px 14px;border-radius:6px;
-                 cursor:pointer;z-index:9999;">
-  </button>
-
-  <!-- Inline JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.getElementById("dark-mode-toggle");
-      if (!btn) return;
-
-      // Initialize theme from localStorage or default
-      let currentTheme = localStorage.getItem("theme") || "dark";
-      document.documentElement.setAttribute("data-theme", currentTheme);
-
-      // Update button text
-      function updateBtn() {
-        btn.innerText = document.documentElement.getAttribute("data-theme") === "dark"
-          ? "☀️ Light"
-          : "🌙 Dark";
-      }
-      updateBtn();
-
-      // Toggle theme on click
-      btn.addEventListener("click", function () {
-        if (document.documentElement.getAttribute("data-theme") === "dark") {
-          document.documentElement.setAttribute("data-theme", "light");
-          localStorage.setItem("theme", "light");
-        } else {
-          document.documentElement.setAttribute("data-theme", "dark");
-          localStorage.setItem("theme", "dark");
-        }
-        updateBtn();
-      });
-    });
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
