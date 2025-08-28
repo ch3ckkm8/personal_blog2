@@ -1,8 +1,5 @@
 title: "ch3ckm8's vault"
 remote_theme: just-the-docs/just-the-docs
-just_the_docs:
-  theme_toggle: true
-
 
 plugins:
   - jekyll-relative-links
@@ -24,9 +21,11 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     default_lang: text
+    
 just_the_docs:
   custom_css:
     - assets/css/custom.css
+  theme_toggle: true
 
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
