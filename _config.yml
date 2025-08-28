@@ -32,24 +32,42 @@ just_the_docs:
 color_scheme: dark
 # Site-wide footer snippet (allowed to contain HTML)
 footer_content: |
-  <a href="#top" aria-label="Back to top" style="position:fixed;right:16px;bottom:16px;padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#f8f8f8;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.12);">↑ Top</a>
-  <button id="dark-mode-toggle"></button>
+  <!-- Back to Top Button -->
+  <a href="#top" aria-label="Back to top"
+     style="position:fixed;right:16px;bottom:16px;padding:8px 10px;
+            border-radius:8px;border:1px solid #ddd;
+            background:#f8f8f8;text-decoration:none;
+            box-shadow:0 1px 4px rgba(0,0,0,.12);">
+     ↑ Top
+  </a>
+
+  <!-- Dark/Light Mode Toggle -->
+  <button id="dark-mode-toggle"
+          style="position:fixed;left:16px;bottom:16px;
+                 background:#444;color:#fff;border:none;
+                 padding:10px 14px;border-radius:6px;
+                 cursor:pointer;z-index:9999;">
+  </button>
+
+  <!-- Inline JS for Dark/Light Toggle -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const btn = document.getElementById("dark-mode-toggle");
+      if (!btn) return;
 
+      // Initialize theme from localStorage or default to dark
       let currentTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-theme", currentTheme);
 
+      // Update button text
       function updateBtn() {
-        if (document.documentElement.getAttribute("data-theme") === "dark") {
-          btn.innerText = "☀️ Light";
-        } else {
-          btn.innerText = "🌙 Dark";
-        }
+        btn.innerText = document.documentElement.getAttribute("data-theme") === "dark"
+          ? "☀️ Light"
+          : "🌙 Dark";
       }
       updateBtn();
 
+      // Toggle on click
       btn.addEventListener("click", function () {
         if (document.documentElement.getAttribute("data-theme") === "dark") {
           document.documentElement.setAttribute("data-theme", "light");
@@ -62,6 +80,7 @@ footer_content: |
       });
     });
   </script>
+
 
 
 
