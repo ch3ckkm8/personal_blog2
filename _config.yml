@@ -41,25 +41,21 @@ footer_content: |
      ↑ Top
   </a>
 
-  <!-- Inline JS: Dark/Light Toggle -->
+  <!-- Dark/Light Toggle Button -->
+  <button id="dark-mode-toggle"
+          style="position:fixed;left:16px;bottom:16px;
+                 background:#444;color:#fff;border:none;
+                 padding:10px 14px;border-radius:6px;
+                 cursor:pointer;z-index:9999;">
+  </button>
+
+  <!-- Inline JS -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Create the button dynamically
-      const btn = document.createElement("button");
-      btn.id = "dark-mode-toggle";
-      btn.style.position = "fixed";
-      btn.style.left = "16px";
-      btn.style.bottom = "16px";
-      btn.style.background = "#444";
-      btn.style.color = "#fff";
-      btn.style.border = "none";
-      btn.style.padding = "10px 14px";
-      btn.style.borderRadius = "6px";
-      btn.style.cursor = "pointer";
-      btn.style.zIndex = "9999";
-      document.body.appendChild(btn);
+      const btn = document.getElementById("dark-mode-toggle");
+      if (!btn) return;
 
-      // Load saved theme or default
+      // Initialize theme from localStorage or default
       let currentTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-theme", currentTheme);
 
@@ -84,6 +80,7 @@ footer_content: |
       });
     });
   </script>
+
 
 
 
