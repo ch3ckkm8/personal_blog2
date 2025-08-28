@@ -17,18 +17,21 @@ highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
-  toc_levels: 1..6   # include all heading levels from # to ######
+  toc_levels: 1..6
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     default_lang: text
-    
+
+# Default color scheme
+color_scheme: dark
+
 just_the_docs:
   custom_css:
     - assets/css/custom.css
-   custom_js:
+  custom_js:
     - assets/js/dark-mode-toggle.js
 
-# Footer with back-to-top button only
+# Footer with back-to-top only
 footer_content: |
   <a href="#top" aria-label="Back to top"
      style="position:fixed;right:16px;bottom:16px;padding:8px 10px;
