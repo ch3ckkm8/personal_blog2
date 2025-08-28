@@ -1,5 +1,9 @@
 remote_theme: just-the-docs/just-the-docs
 
+readme_index:
+  enabled: true
+  with_frontmatter: true
+
 plugins:
   - jekyll-relative-links
 relative_links:
