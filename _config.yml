@@ -25,6 +25,8 @@ kramdown:
 just_the_docs:
   custom_css:
     - assets/css/custom.css
+  custom_js:
+    - assets/js/dark-mode-toggle.js
 
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
