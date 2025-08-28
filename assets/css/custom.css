@@ -46,6 +46,18 @@
   color: #f1f1f1;
 }
 
+[data-theme="light"] {
+  background-color: #ffffff;
+  color: #1c1c1c;
+}
+
+/* Optional: override code blocks for light mode */
+[data-theme="light"] .language-php {
+  background-color: #f5f5f5 !important;
+  color: #2d2d2d !important;
+}
+
+
 /* General block styling */
 .language-php {
   background-color: #2d2d2d !important;
