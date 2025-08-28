@@ -25,17 +25,18 @@
 /* Dark mode toggle button */
 #dark-mode-toggle {
   position: fixed;
-  bottom: 90px;  /* move above the back-to-top button */
-  left: 30px;
+  left: 16px;
+  bottom: 16px;
   background: #444;
   color: #fff;
   border: none;
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
-  z-index: 9999;  /* higher than most page elements */
+  z-index: 2147483647; /* maximum z-index to be safe */
+  pointer-events: auto; /* ensure it's clickable */
 }
+
 #dark-mode-toggle:hover {
   background: #666;
 }
