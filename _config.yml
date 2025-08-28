@@ -34,6 +34,35 @@ color_scheme: dark
 footer_content: |
   <a href="#top" aria-label="Back to top" style="position:fixed;right:16px;bottom:16px;padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#f8f8f8;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.12);">↑ Top</a>
   <button id="dark-mode-toggle"></button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.getElementById("dark-mode-toggle");
+
+      let currentTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
+      function updateBtn() {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+          btn.innerText = "☀️ Light";
+        } else {
+          btn.innerText = "🌙 Dark";
+        }
+      }
+      updateBtn();
+
+      btn.addEventListener("click", function () {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+        updateBtn();
+      });
+    });
+  </script>
+
 
 
 
